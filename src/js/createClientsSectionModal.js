@@ -1,4 +1,4 @@
-import { createModalForm } from "./clientsModalForm.js"
+import { createModalForm } from "./createClientsModalForm.js"
 
 export const createModalClients = () => {
     const overlay = document.createElement('div')

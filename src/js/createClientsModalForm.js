@@ -24,8 +24,8 @@ export const createModalForm = () => {
         objectClient.surname = inputSurname.value
         objectClient.name = inputName.value
         objectClient.lastName = inputLastName.value
-
-        const data = await addClient(objectClient)
+        
+        await addClient(objectClient)
     })
 
     return {

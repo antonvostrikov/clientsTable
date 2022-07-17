@@ -1,7 +1,16 @@
 {
   "users": [
     {
+      "surname": "Востриков",
+      "name": "Антон",
+      "lastName": "Дмитриевич",
       "id": 1
+    },
+    {
+      "surname": "asd",
+      "name": "asdas",
+      "lastName": "dasd",
+      "id": 2
     }
   ]
 }
