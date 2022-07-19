@@ -1,5 +1,3 @@
-import { clientsBody } from "./createClientsBody.js"
-
 export const addClient = async (data) => {
     try {
         await fetch('http://localhost:3001/users', {
@@ -19,8 +17,18 @@ export const getClients = async () => {
     try {
         const response = await fetch('http://localhost:3001/users')
                 .then(response => response.json())
-                
+
         return response        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const deleteClient = async (id) => {
+    try {
+        const response = await fetch(`http://localhost:3001/users/${id}`, {
+            method: 'DELETE'
+        })
     } catch (error) {
         console.log(error)
     }

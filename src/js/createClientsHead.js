@@ -21,9 +21,10 @@ export const clientsItems = () => {
     headContacts.textContent = 'Контакты'
     headActions.textContent = 'Действия'
 
+    body.classList.add('table__body')
+
     headRow.append(headId, headFullName, headCreated, headUpdated, headContacts, headActions)
     head.append(headRow)
-    body.append(clientsBody().bodyRow)
     wrapper.append(head, body)
 
     return {

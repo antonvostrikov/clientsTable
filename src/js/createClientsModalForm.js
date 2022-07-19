@@ -1,4 +1,5 @@
 import { addClient } from "./api.js"
+import { createDate, createTime } from "./utils.js"
 
 export const createModalForm = () => {
     const wrapper = document.createElement('div')
@@ -20,11 +21,14 @@ export const createModalForm = () => {
         e.preventDefault()
 
         let objectClient = {}
-    
+
         objectClient.surname = inputSurname.value
         objectClient.name = inputName.value
         objectClient.lastName = inputLastName.value
+        objectClient.created = `${createDate()} ${createTime()}`
         
+        if (!inputSurname.value && !inputName.value && !inputLastName.value) return
+
         await addClient(objectClient)
     })
 
