@@ -1,30 +1,48 @@
-import { clientsItems } from "./createClientsHead.js"
-import { createModalClients } from "./createClientsSectionModal.js"
+import { addClient } from "./addClients.js"
 
-export const createClientsSection = () => {
-    const section = document.createElement('section')
+export const clientsSection = () => {
+    const wrapperAdding = document.createElement('div')
+    const addBtn = document.createElement('button')
+    const sectionWrapper = document.createElement('section')
     const container = document.createElement('div')
-    const addClientWrapper = document.createElement('div')
-    const addClientButton = document.createElement('button')
+    const table = document.createElement('table')
+    const head = document.createElement('thead')
+    const body = document.createElement('tbody')
+    const rowHead = document.createElement('tr')
+    const headId = document.createElement('th')
+    const headFullName = document.createElement('th')
+    const headCreated = document.createElement('th')
+    const headUpdated = document.createElement('th')
+    const headContacts = document.createElement('th')
+    const headActions = document.createElement('th')
 
-    addClientButton.textContent = 'Добавить'
+    headId.textContent = 'ID'
+    headFullName.textContent = 'Фамилия Имя Отчество'
+    headCreated.textContent = 'Создано'
+    headUpdated.textContent = 'Изменено'
+    headContacts.textContent = 'Контакты'
+    headActions.textContent = 'Действия'
 
-    section.classList.add('section__clients')
+    rowHead.append(headId, headFullName, headCreated, headUpdated, headContacts, headActions)
+    head.append(rowHead)
+    table.append(head, body)
+
     container.classList.add('container')
-    addClientWrapper.classList.add('add__client')
-    addClientButton.classList.add('add__client-button')
+    head.classList.add('table__thead')
+    body.classList.add('table__tbody')
 
-    addClientWrapper.append(addClientButton)
-    container.append(addClientWrapper)
-    section.append(container)
+    addBtn.textContent = 'Добавить клиента'
 
-    addClientButton.addEventListener('click', (e) => {
-        const modal = createModalClients()
+    wrapperAdding.append(addBtn)
+    container.append(wrapperAdding, table)
+    sectionWrapper.append(container)
+
+    addBtn.addEventListener('click', (e) => {
+        addClient()
     })
 
-    container.append(clientsItems().wrapper)
 
     return {
-        section
+        sectionWrapper
     }
 }

@@ -1,6 +1,6 @@
 .overlay {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,8 +11,8 @@
     transition: .3s all;
 }
 .modal__client {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     width: 100%;
     max-width: 500px;
     position: fixed;
@@ -26,9 +26,4 @@
     border-radius: 3px;
     background-color: #fff;
     transition: 0.3s all;
-}
-.modal__client.active,
-.overlay.active{
-   opacity: 1;
-   visibility: visible;
 }

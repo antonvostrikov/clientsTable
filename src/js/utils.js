@@ -4,23 +4,12 @@ export const createDate = () => {
     const locale = {
         day: 'numeric',
         month: 'numeric',
-        year: 'numeric'
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
     }
 
     const resultDate = date.toLocaleString('ru', locale)
 
     return resultDate
-}
-
-export const createTime = () => {
-    const time = new Date()
-
-    const locale = {
-        hour: 'numeric',
-        minute: 'numeric'
-    }
-
-    const resultTime = time.toLocaleString('ru', locale)
-
-    return resultTime
 }

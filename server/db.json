@@ -1,11 +1,12 @@
 {
   "users": [
     {
-      "surname": "wada",
-      "name": "wda",
-      "lastName": "wdawdaw",
-      "created": null,
-      "id": 4
+      "surname": "asda",
+      "name": "sdas",
+      "lastName": "dasd",
+      "createdAt": "02.08.2022, 01:00",
+      "updatedAt": "02.08.2022, 01:00",
+      "id": 1
     }
   ]
 }

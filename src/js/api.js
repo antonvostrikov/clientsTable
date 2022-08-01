@@ -1,7 +1,7 @@
-export const addClient = async (data) => {
+export const sendData = async (data, method, id = null) => {
     try {
-        await fetch('http://localhost:3001/users', {
-            method: 'POST',
+        await fetch(`http://localhost:3001/users/${method === 'POST' ? '' : id}`, {
+            method: method,
             headers: {
                 'Content-Type': 'application/json'
             },

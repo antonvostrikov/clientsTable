@@ -1,19 +1,18 @@
+import { clientItem } from "./createClientItem.js"
 import { getClients } from "./api.js"
+import { clientsSection } from "./createClientsSection.js"
 import { createHeader } from "./createHeader.js"
-import { createClientsSection } from "./createClientsSection.js"
-import { clientsBody } from "./createClientsBody.js"
 
 const createApplication = async () => {
     const users = await getClients()
     const header = createHeader()
-    const clientsSection = createClientsSection()
+    const section = clientsSection()
 
-    document.querySelector('.app').append(header.header, clientsSection.section)
-
+    document.querySelector('.app').append(header.header, section.sectionWrapper)
+    
     users.map(user => {
-        document.querySelector('.table__body').append(clientsBody(user))
+        document.querySelector('.table__tbody').append(clientItem(user).rowBody)
     })
-
 }
 
 createApplication()
