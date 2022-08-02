@@ -19,6 +19,13 @@ export const clientItem = (data) => {
     updateBtn.textContent = 'Изменить'
     deleteBtn.textContent = 'Удалить'
 
+    bodyId.classList.add('body-id', 'body-cell')
+    bodyFullName.classList.add('body-fullname', 'body-cell')
+    bodyCreated.classList.add('body-created', 'body-cell')
+    bodyUpdated.classList.add('body-updated', 'body-cell')
+    bodyContacts.classList.add('body-contacts', 'body-cell')
+    bodyActions.classList.add('body-actions', 'body-cell')
+
     rowBody.dataset.id = data.id
     bodyIdSpan.textContent = data.id
     bodyFullNameSpan.textContent = `${data.surname} ${data.name} ${data.lastName}`

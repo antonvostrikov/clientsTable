@@ -1,0 +1,25 @@
+.section__clients-adding {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.add-client {
+    margin: 0 0 0 15px;
+    border: none;
+    background: #1a88db;
+    color: #fff;
+    font-family: RobotoLight;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+input[class="input-search"] {
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #1a88db;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+input[class="input-search"]:focus {
+    outline-color: #1a88db;
+}
