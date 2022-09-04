@@ -1,25 +1,28 @@
+@import url('https://css.gg/css');
+@import url('svgIcons.css');
 @import url('header.css');
 @import url('modal.css');
 @import url('addClient.css');
 @import url('table.css');
-
+@import url('form.css');
+@import url('modalDelete.css');
 
 @font-face {
-    font-family: "RobotoRegular";
-    src: url('../fonts/RobotoCondensed-Regular.ttf');
+    font-family: "SourceSansRegular";
+    src: url('../textFonts/SourceSansPro-Regular.ttf');
     font-weight: 100;
 }
 
 @font-face {
-    font-family: "RobotoBold";
+    font-family: "SourceSansBold";
     font-weight: 100;
-    src: url('../fonts/RobotoCondensed-Bold.ttf');
+    src: url('../textFonts/SourceSansPro-SemiBold.ttf');
 }
 
 @font-face {
-    font-family: "RobotoLight";
+    font-family: "SourceSansLight";
     font-weight: 100;
-    src: url('../fonts/RobotoCondensed-Light.ttf');
+    src: url('../textFonts/SourceSansPro-Light.ttf');
 }
 
 html {
@@ -43,4 +46,10 @@ body {
 
 tr, td, th {
     text-align: left;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }

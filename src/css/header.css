@@ -1,8 +1,38 @@
-.header .container {
-    display: flex;
-    align-items: center;
+.header {
+    margin: 70px 0 0 0;
 }
 .header__title {
-    font-family: RobotoRegular;
-    font-size: 38px;
+    font-family: SourceSansRegular;
+    font-size: 18px;
+}
+.header-btn {
+    margin: 0 0 0 10px;
+    border: none;
+    background: #1a88db;
+    color: #fff;
+    font-family: SourceSansLight;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+input[class="input-search"] {
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #1a88db;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+input[class="input-search"]:focus {
+    outline-color: #1a88db;
+}
+.header__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

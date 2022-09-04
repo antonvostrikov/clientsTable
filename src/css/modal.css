@@ -11,6 +11,8 @@
     transition: .3s all;
 }
 .modal__client {
+    display: flex;
+    justify-content: center;
     opacity: 1;
     visibility: visible;
     width: 100%;
@@ -21,9 +23,32 @@
     transform: translate(-50%, -50%);
     z-index: 30; 
     box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2); 
-    text-align: center;
     padding: 30px;
     border-radius: 3px;
     background-color: #fff;
     transition: 0.3s all;
+}
+.modal__client-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+.modal__client-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: #f24e4e;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.modal__client-close i {
+    color: #fff;
+}
+.modal__header {
+    margin: 50px 0 0 0;
+}
+.modal__header-title {
+    text-align: center;
+    font-family: SourceSansRegular;
+    font-weight: 100;
 }

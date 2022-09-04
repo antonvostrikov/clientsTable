@@ -1,11 +1,6 @@
-import { addClient } from "./addClients.js"
-
 export const clientsSection = () => {
-    const wrapperAdding = document.createElement('div')
-    const searchForm = document.createElement('form')
-    const searchInput = document.createElement('input')
-    const addBtn = document.createElement('button')
     const sectionWrapper = document.createElement('section')
+    const tableWrapper = document.createElement('div')
     const container = document.createElement('div')
     const table = document.createElement('table')
     const head = document.createElement('thead')
@@ -26,9 +21,7 @@ export const clientsSection = () => {
     headActions.textContent = 'Действия'
 
     sectionWrapper.classList.add('section__clients')
-    wrapperAdding.classList.add('section__clients-adding')
-    addBtn.classList.add('add-client')
-    searchInput.classList.add('input-search')
+    tableWrapper.classList.add('table__wrapper')
     table.classList.add('section__clients-table')
     headId.classList.add('head-id', 'head-cell')
     headFullName.classList.add('head-fullname', 'head-cell')
@@ -45,19 +38,9 @@ export const clientsSection = () => {
     head.classList.add('table__thead')
     body.classList.add('table__tbody')
 
-    addBtn.textContent = 'Добавить клиента'
-
-    searchInput.placeholder = 'Найти клиента'
-
-    searchForm.append(searchInput)
-    wrapperAdding.append(searchForm, addBtn)
-    container.append(wrapperAdding, table)
+    tableWrapper.append(table)
+    container.append(tableWrapper)
     sectionWrapper.append(container)
-
-    addBtn.addEventListener('click', (e) => {
-        addClient()
-    })
-
 
     return {
         sectionWrapper

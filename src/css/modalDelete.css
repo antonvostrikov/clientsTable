@@ -1,0 +1,33 @@
+.modal__header-delete {
+    margin: 0 0 40px 0;
+}
+.modal__wrapper-buttons {
+    display: flex;
+    justify-content: center;
+}
+.btn-modal {
+    border: none;
+    color: #fff;
+    font-family: SourceSansLight;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.cancel-btn {
+    background: #1a88db;
+}
+.delete-btn {
+    background: #f24e4e;
+    margin: 0 20px 0 0;
+}
+.modal__delete-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: #f24e4e;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.modal__delete-close i {
+    color: #fff;
+}
