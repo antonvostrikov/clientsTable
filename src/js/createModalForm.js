@@ -1,5 +1,3 @@
-import { inputHander } from "./validateForm.js"
-
 export const modalForm = () => {
     const form = document.createElement('form')
     const labelSurname = document.createElement('label')
@@ -18,8 +16,10 @@ export const modalForm = () => {
     const submitBtn = document.createElement('button')
 
     inputPhone.type = 'tel'
+    submitBtn.type = 'submit'
 
     form.classList.add('client__form')
+    form.name = 'form'
     inputSurname.classList.add('input-surname__form', 'input-form')
     inputSurname.id = 'surname'
     inputName.classList.add('input-name__form', 'input-form')
@@ -33,6 +33,7 @@ export const modalForm = () => {
     labelLastName.htmlFor = 'lastName'
     labelPhone.htmlFor = 'phone'
     submitBtn.classList.add('submit-btn')
+    submitBtn.id = 'submit'
     wrapperSurname.classList.add('input-box')
     wrapperName.classList.add('input-box')
     wrapperLastName.classList.add('input-box')
@@ -66,7 +67,55 @@ export const modalForm = () => {
 
     submitBtn.textContent = 'Отправить'
 
-    form.addEventListener('input', inputHander)
+    const inputs = Array.from(form)
+    const buttonValid = form.elements['submit']
+    const validate = []
+
+    inputs.forEach(input => {
+        if (input.hasAttribute('data-reg')) {
+            input.setAttribute('is-valid', '0')
+            validate.push(input)
+        }
+    })
+
+    const inputHandler = ({target}) => {
+        if (target.hasAttribute('data-reg')) {
+            inputCheck(target)
+        }
+    }
+
+    const inputCheck = (el) => {
+        const inputValue = el.value
+        const inputReg = el.getAttribute('data-reg')
+        const reg = new RegExp(inputReg)
+
+        if (reg.test(inputValue)) {
+            el.style.border = '2px solid #5dd97d'
+            el.setAttribute('is-valid', '1')
+        } else {
+            el.style.border = '2px solid #f24e4e'
+            el.setAttribute('is-valid', '0')
+        }
+    }
+
+    const buttonHandler = (e) => {
+        const isValidate = []
+        
+        validate.forEach(el => {
+            isValidate.push(el.getAttribute('is-valid'))
+        })
+
+        const isValid = isValidate.reduce((acc, current) => {
+            return acc & current
+        })
+
+        if (!Boolean(Number(isValid))) {
+            e.preventDefault()
+        }
+    }
+
+    form.addEventListener('input', inputHandler)
+    buttonValid.addEventListener('click', buttonHandler)
 
     return {
         form,
