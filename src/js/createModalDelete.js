@@ -48,6 +48,13 @@ export const modalDelete = (data) => {
         deleteClient(data.id)
     })
     
+    document.addEventListener('keyup', e => {
+        if (e.code === 'Escape') {
+            modal.remove()
+            overlay.remove()
+        }
+    })
+
     modalCancel.append(modalCancelIcon)
     modalHeader.append(modalTitle)
     deleteWrapper.append(btnDelete, btnCancel)

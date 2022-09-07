@@ -33,6 +33,13 @@ export const addingModal = () => {
         }
     })
 
+    document.addEventListener('keyup', e => {
+        if (e.code === 'Escape') {
+            modal.remove()
+            overlay.remove()
+        }
+    })
+
     closeModalBtn.append(closeModalBtnIcon)
     modalWrapper.append(modalHeader, form.form)
     modalHeader.append(modalTitle)

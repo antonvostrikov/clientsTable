@@ -13,3 +13,7 @@ export const createDate = () => {
 
     return resultDate
 }
+
+export const toUpperSymbol = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+}
