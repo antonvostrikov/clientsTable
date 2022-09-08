@@ -20,6 +20,7 @@ export const clientItem = (data) => {
     const updateBtnIcon = document.createElement('i')
     const deleteBtnIcon = document.createElement('i')
     
+    rowBody.classList.add('client-item')
     bodyId.classList.add('body-id', 'body-cell')
     bodyFullName.classList.add('body-fullname', 'body-cell')
     bodyCreated.classList.add('body-created', 'body-cell')
@@ -31,6 +32,7 @@ export const clientItem = (data) => {
     deleteBtnIcon.classList.add('gg-trash')
     updateBtn.classList.add('button__update')
     deleteBtn.classList.add('button__delete')
+    bodyFullNameSpan.classList.add('client-fullName')
 
     rowBody.dataset.id = data.id
     bodyIdSpan.textContent = data.id

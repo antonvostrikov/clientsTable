@@ -26,6 +26,12 @@
 .input-form:focus {
     outline: none;
 }
+.input-form:valid:not(:placeholder-shown) {
+    border-color: #5dd97d;
+}
+.input-form:invalid:not(:placeholder-shown) {
+    border-color: #f24e4e;
+}
 .submit-btn {
     color: #fff;
     background: #1a88db;
