@@ -21,7 +21,7 @@ export const modalDelete = (data) => {
     modalCancel.classList.add('modal__delete-close')
     btnDelete.classList.add('delete-btn', 'btn-modal')
     btnCancel.classList.add('cancel-btn', 'btn-modal')
-    modalCancelIcon.classList.add('fa', 'fa-times')
+    modalCancelIcon.classList.add('gg-close')
 
     modalTitle.textContent = 'Удалить клиента?'
     btnDelete.textContent = 'Удалить'

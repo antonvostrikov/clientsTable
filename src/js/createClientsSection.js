@@ -1,3 +1,5 @@
+import { sortTable } from './sort.js'
+
 export const clientsSection = () => {
     const sectionWrapper = document.createElement('section')
     const tableWrapper = document.createElement('div')
@@ -20,6 +22,11 @@ export const clientsSection = () => {
     headContacts.textContent = 'Контакты'
     headActions.textContent = 'Действия'
 
+    headId.setAttribute('data-type', 'number')
+    headFullName.setAttribute('data-type', 'string')
+    headCreated.setAttribute('data-type', 'date')
+    headUpdated.setAttribute('data-type', 'date')
+
     sectionWrapper.classList.add('section__clients')
     tableWrapper.classList.add('table__wrapper')
     table.classList.add('section__clients-table')
@@ -41,6 +48,16 @@ export const clientsSection = () => {
     tableWrapper.append(table)
     container.append(tableWrapper)
     sectionWrapper.append(container)
+
+    table.addEventListener('click', (e) => {
+        const target = e.target
+        const index = target.cellIndex
+        const type = target.getAttribute('data-type')
+
+        if (target.tagName != 'TH') return
+        
+        sortTable(table, index, type)
+    })
 
     return {
         sectionWrapper

@@ -15,7 +15,7 @@ export const addingModal = () => {
     modalTitle.classList.add('modal__header-title')
     overlay.classList.add('overlay')
     closeModalBtn.classList.add('modal__client-close')
-    closeModalBtnIcon.classList.add('fa', 'fa-times')
+    closeModalBtnIcon.classList.add('gg-close')
 
     modalTitle.textContent = 'Добавить клиента'
 

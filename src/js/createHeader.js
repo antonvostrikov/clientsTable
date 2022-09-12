@@ -10,18 +10,15 @@ export const createHeader = () => {
     const form = document.createElement('form')
     const input = document.createElement('input')
     const addBtn = document.createElement('button')
-    const filterBtn = document.createElement('button')
 
     addBtn.textContent = 'Добавить клиента'
-    filterBtn.textContent = 'Фильтр'
     title.textContent = 'Клиенты'
 
-    input.placeholder = 'Найти клиента'
+    input.placeholder = 'Введите ФИО'
 
     header.classList.add('header')
     container.classList.add('container')
     addBtn.classList.add('add-client', 'header-btn')
-    filterBtn.classList.add('filter-client', 'header-btn')
     input.classList.add('input-search')
     headerTitle.classList.add('header__title')
     title.classList.add('header__title-title')
@@ -30,7 +27,7 @@ export const createHeader = () => {
 
     headerTitle.append(title)
     form.append(input)
-    headerNav.append(form, addBtn, filterBtn)
+    headerNav.append(form, addBtn)
     headerWrapper.append(headerTitle, headerNav)
     container.append(headerWrapper)
     header.append(container)
