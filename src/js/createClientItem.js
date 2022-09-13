@@ -9,11 +9,6 @@ export const clientItem = (data) => {
     const bodyUpdated = document.createElement('td')
     const bodyContacts = document.createElement('td')
     const bodyActions = document.createElement('td')
-    const bodyIdSpan = document.createElement('span')
-    const bodyFullNameSpan = document.createElement('span')
-    const bodyCreatedSpan = document.createElement('span')
-    const bodyUpdatedSpan = document.createElement('span')
-    const bodyContactsSpan = document.createElement('span')
     const wrapperButtons = document.createElement('div')
     const updateBtn = document.createElement('button')
     const deleteBtn = document.createElement('button')
@@ -32,20 +27,15 @@ export const clientItem = (data) => {
     deleteBtnIcon.classList.add('gg-trash')
     updateBtn.classList.add('button__update')
     deleteBtn.classList.add('button__delete')
-    bodyFullNameSpan.classList.add('client-fullName')
+    bodyFullName.classList.add('client-fullName')
 
     rowBody.dataset.id = data.id
-    bodyIdSpan.textContent = data.id
-    bodyFullNameSpan.textContent = `${data.surname} ${data.name} ${data.lastName}`
-    bodyCreatedSpan.textContent = data.createdAt
-    bodyUpdatedSpan.textContent = data.updatedAt
-    bodyContactsSpan.textContent = data.contact
+    bodyId.textContent = data.id
+    bodyFullName.textContent = `${data.surname} ${data.name} ${data.lastName}`
+    bodyCreated.textContent = data.createdAt
+    bodyUpdated.textContent = data.updatedAt
+    bodyContacts.textContent = data.contact
 
-    bodyId.append(bodyIdSpan)
-    bodyFullName.append(bodyFullNameSpan)
-    bodyCreated.append(bodyCreatedSpan)
-    bodyUpdated.append(bodyUpdatedSpan)
-    bodyContacts.append(bodyContactsSpan)
     updateBtn.append(updateBtnIcon)
     deleteBtn.append(deleteBtnIcon)
     wrapperButtons.append(updateBtn, deleteBtn)

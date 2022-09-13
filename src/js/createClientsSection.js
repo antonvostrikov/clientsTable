@@ -1,5 +1,3 @@
-import { sortTable } from './sort.js'
-
 export const clientsSection = () => {
     const sectionWrapper = document.createElement('section')
     const tableWrapper = document.createElement('div')
@@ -48,16 +46,6 @@ export const clientsSection = () => {
     tableWrapper.append(table)
     container.append(tableWrapper)
     sectionWrapper.append(container)
-
-    table.addEventListener('click', (e) => {
-        const target = e.target
-        const index = target.cellIndex
-        const type = target.getAttribute('data-type')
-
-        if (target.tagName != 'TH') return
-        
-        sortTable(table, index, type)
-    })
 
     return {
         sectionWrapper
