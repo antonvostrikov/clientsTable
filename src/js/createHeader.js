@@ -37,6 +37,7 @@ export const createHeader = () => {
     })
 
     return {
-        header
+        header,
+        input
     }
 }

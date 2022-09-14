@@ -8,21 +8,18 @@ import { sortTable } from "./sort.js"
 const createApplication = async () => {
     const users = await getClients()
     const header = createHeader()
-    const section = clientsSection()
+    const section = clientsSection() // таблица с постами 
 
     document.querySelector('.app').append(header.header, section.sectionWrapper)
     
     users.map(user => {
-        document.querySelector('.table__tbody').append(clientItem(user).rowBody)
+        document.querySelector('.table__tbody').append(clientItem(user).rowBody) // Добавляются посты 
     })
 
     const clientsItems = document.querySelectorAll('.client-item')
-    const inputSearch = document.querySelector('.input-search')
 
-    searchClient(clientsItems, inputSearch)
-    const table = document.querySelector('table')
-    sortTable()
-
+    searchClient(clientsItems, header.input)
+    sortTable(section.table)
 }
 
 createApplication()

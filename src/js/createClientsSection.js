@@ -1,3 +1,5 @@
+import { sortTable } from "./sort.js"
+
 export const clientsSection = () => {
     const sectionWrapper = document.createElement('section')
     const tableWrapper = document.createElement('div')
@@ -46,8 +48,9 @@ export const clientsSection = () => {
     tableWrapper.append(table)
     container.append(tableWrapper)
     sectionWrapper.append(container)
-
+    
     return {
-        sectionWrapper
+        sectionWrapper,
+        table
     }
 }
