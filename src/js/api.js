@@ -1,6 +1,6 @@
 export const sendData = async (data, method, id = null) => {
     try {
-        await fetch(`http://localhost:3001/users/${method === 'POST' ? '' : id}`, {
+        await fetch(`https://antonvostrikov.github.io/clientsTable/server/db.json/${method === 'POST' ? '' : id}`, {
             method: method,
             headers: {
                 'Content-Type': 'application/json'
@@ -15,7 +15,7 @@ export const sendData = async (data, method, id = null) => {
 
 export const getClients = async () => {
     try {
-        const response = await fetch('http://localhost:3001/users')
+        const response = await fetch('https://antonvostrikov.github.io/clientsTable/server/db.json')
                 .then(response => response.json())
 
         return response        
@@ -26,7 +26,7 @@ export const getClients = async () => {
 
 export const deleteClient = async (id) => {
     try {
-        const response = await fetch(`http://localhost:3001/users/${id}`, {
+        const response = await fetch(`https://antonvostrikov.github.io/clientsTable/server/db.json/${id}`, {
             method: 'DELETE'
         })
     } catch (error) {
