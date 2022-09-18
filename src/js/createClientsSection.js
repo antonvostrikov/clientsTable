@@ -41,7 +41,7 @@ export const clientsSection = () => {
     head.append(rowHead)
     table.append(head, body)
 
-    container.classList.add('container')
+    container.classList.add('container', 'container-table')
     head.classList.add('table__thead')
     body.classList.add('table__tbody')
 

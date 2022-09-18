@@ -8,16 +8,18 @@ export const sortTable = (table) => {
         const compare = (rowA, rowB) => {
             const rowATable = rowA.cells[index].innerHTML
             const rowBTable = rowB.cells[index].innerHTML
-    
+
             switch(type) {
                 case 'number':
                     return rowBTable - rowATable
                     break
                 case 'string':
+                case 'date': 
                     if (rowATable > rowBTable) return 1
                     else if (rowATable < rowBTable) return -1
                     return 0
                     break     
+                    break
             }
         }
         
