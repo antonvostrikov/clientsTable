@@ -9,7 +9,7 @@ const createApplication = async () => {
     const users = await getClients()
     const header = createHeader()
     const section = clientsSection() // таблица с постами 
-
+    console.log(users)
     document.querySelector('.app').append(header.header, section.sectionWrapper)
     
     users.map(user => {
